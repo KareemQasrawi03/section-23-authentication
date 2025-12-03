@@ -8,5 +8,11 @@
       "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "kareemalqasrawi@gmail.com",
+      "password": "$2a$12$FPZu5b1ywMCWdwKdnmjjQ.z0G90mVwzwqaiXJ8N37BO9A.UDNwN86",
+      "id": "b821fc81-9165-4e66-af28-3665e11ac2ec"
+    }
+  ]
 }
