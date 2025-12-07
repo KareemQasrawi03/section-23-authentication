@@ -8,6 +8,7 @@ import {
 
 import MainNavigation from "../components/MainNavigation";
 import { useEffect } from "react";
+import { getTokenDuration } from "../util/auth";
 
 function RootLayout() {
   const token = useLoaderData();
@@ -17,10 +18,18 @@ function RootLayout() {
     if (!token) {
       return;
     }
-    setTimeout(() => {
-      // this is same btn logout {form} make automatic logout if fench 1 h
-      submit(null, { action: "/logout", method: "post" });
-    }, 1 * 60 * 60 * 1000);// 1 houre
+
+    if (token === "EXPIRED"){
+        submit(null, { action: "/logout", method: "post" });
+        return
+    }
+    const tokenDuration = getTokenDuration()
+    console.log(tokenDuration)
+      setTimeout(() => {
+        // this is same btn logout {form} make automatic logout if fench 1 h
+        submit(null, { action: "/logout", method: "post" });
+      }, tokenDuration);// 1 houre
+
   }, [token, submit]);
 
   return (

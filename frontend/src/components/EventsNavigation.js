@@ -19,7 +19,7 @@ function EventsNavigation() {
               All Events
             </NavLink>
           </li>
-          {token && <li>
+          {token && (<li>
             <NavLink
               to="/events/new"
               className={({ isActive }) =>
@@ -28,7 +28,7 @@ function EventsNavigation() {
             >
               New Event
             </NavLink>
-          </li>
+          </li>)
           }
         </ul>
       </nav>
